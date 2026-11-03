@@ -36,7 +36,7 @@ The app listens on port 5000 (set in `application.properties` to match Elastic B
 ```
 .\mvnw test
 ```
-[N] tests cover allow and deny per role, unknown roles, and missing fields, plus an HTTP-level test of `/authorize`.
+7 tests cover allow and deny per role, unknown roles, and missing fields, plus an HTTP-level test of `/authorize`.
 
 ## Design notes
 - **Deny by default.** Anything not explicitly granted is rejected.
