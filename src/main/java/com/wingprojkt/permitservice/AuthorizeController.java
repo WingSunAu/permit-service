@@ -18,10 +18,13 @@ public class AuthorizeController {
     public record AuthRequest(String role, String action) {}
     public record AuthResponse(boolean allowed, String reason) {}
 
-    @PostMapping("/authorize")
-    public AuthResponse authorize(@RequestBody AuthRequest req) {
-        var perms = ROLE_PERMS.getOrDefault(req.role(), Set.of());
-        boolean ok = perms.contains(req.action());
-        return new AuthResponse(ok, ok ? "role grants action" : "denied by default");
+@PostMapping("/authorize")
+public AuthResponse authorize(@RequestBody AuthRequest req) {
+    if (req.role() == null || req.action() == null) {
+        return new AuthResponse(false, "denied by default");
     }
+    var perms = ROLE_PERMS.getOrDefault(req.role(), Set.of());
+    boolean ok = perms.contains(req.action());
+    return new AuthResponse(ok, ok ? "role grants action" : "denied by default");
+}
 }
