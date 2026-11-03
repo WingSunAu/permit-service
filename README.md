@@ -18,11 +18,13 @@ Roles (hardcoded for now): `ADMIN` (READ, WRITE, DELETE), `EDITOR` (READ, WRITE)
 ## Demo
 Deployed on AWS Elastic Beanstalk (health check):
 
-![Health check on AWS](docs/health-aws.png)
+<img width="826" height="101" alt="image" src="https://github.com/user-attachments/assets/6b15aa6a-e74c-4c40-8a1a-53b6171fbf51" />
+
 
 `/authorize` run locally, where VIEWER is denied WRITE:
 
-![Authorize locally](docs/authorize-local.png)
+<img width="551" height="155" alt="image" src="https://github.com/user-attachments/assets/57cd77d9-7a58-43d6-9806-bb12bb8b41f6" />
+
 
 ## Run locally
 ```
